@@ -1,0 +1,35 @@
+class Cliente {
+    private String dni;
+    private String nombre;
+    private CuentaBancaria cuenta;
+
+    public Cliente(String dni, String nombre, int numeroCuenta) {
+        this.dni = dni;
+        this.nombre = nombre;
+        this.cuenta = new CuentaBancaria(numeroCuenta);
+    }
+
+    public String getDni() {
+        return dni;
+    }
+
+    public void setDni(String dni) {
+        this.dni = dni;
+    }
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public CuentaBancaria getCuenta() {
+        return cuenta;
+    }
+
+    public void setCuenta(CuentaBancaria cuenta) {
+        this.cuenta = cuenta;
+    }
+}
