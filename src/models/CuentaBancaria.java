@@ -20,7 +20,7 @@ public abstract class CuentaBancaria {
     public void depositar(double monto) {
         if (monto > 0) {
             saldo += monto;
-            System.out.println("Deposito exitoso. Saldo: " + saldo);
+            System.out.println("Deposito exitoso. Su saldo: " + saldo);
         } else {
             System.out.println("Monto invalido");
         }
@@ -29,20 +29,19 @@ public abstract class CuentaBancaria {
     public void consultarSaldo() {
         System.out.println("Saldo actual: " + saldo);
     }
-
+    //Metodo abstracto
     public abstract boolean puedeRetirar(double monto);
 
-    // Método que usa polimorfismo
     public void retirar(double monto) {
         if (monto > 0 && puedeRetirar(monto)) {
             saldo -= monto;
             System.out.println("Retiro exitoso. Saldo: " + saldo);
             mostrarEstadoCuenta();
         } else {
-            System.out.println("No se puede realizar el retiro");
+            System.out.println("No se puede realizar el retiro, saldo insuficiente");
         }
     }
-
+    //Metodo abstracto
     public abstract void mostrarEstadoCuenta();
 
     @Override

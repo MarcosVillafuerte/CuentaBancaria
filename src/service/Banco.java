@@ -54,7 +54,7 @@ public class Banco {
             System.out.println(cliente);
         }
     }
-
+    //Verifica si el cliente existe para realizar la accion
     public void realizarDeposito(String dni, double monto) {
         Cliente cliente = buscarCliente(dni);
         if (cliente != null) {
@@ -83,7 +83,7 @@ public class Banco {
     }
 
 
-
+    //Muestra lo mismo que el ver clientes (mejorar)
     public List<String> generarReporte() {
         List<String> reporte = new ArrayList<>();
         for (Cliente cliente : clientes) {
