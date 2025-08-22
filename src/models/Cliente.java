@@ -1,12 +1,14 @@
-class Cliente {
+package models;
+
+public class Cliente {
     private String dni;
     private String nombre;
     private CuentaBancaria cuenta;
 
-    public Cliente(String dni, String nombre, int numeroCuenta) {
+    public Cliente(String dni, String nombre, CuentaBancaria cuenta) {
         this.dni = dni;
         this.nombre = nombre;
-        this.cuenta = new CuentaBancaria(numeroCuenta);
+        this.cuenta = cuenta;
     }
 
     public String getDni() {
@@ -31,5 +33,10 @@ class Cliente {
 
     public void setCuenta(CuentaBancaria cuenta) {
         this.cuenta = cuenta;
+    }
+
+    @Override
+    public String toString() {
+        return "Cliente: " + nombre + " (DNI: " + dni + ") - " + cuenta.toString();
     }
 }
